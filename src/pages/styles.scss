@@ -9,6 +9,9 @@
   @include container--max;
   justify-content: flex-start;
   padding-top: $header-height;
+  .home__text {
+    font-weight: 700;
+  }
 }
 .home__image-wrapper {
   @include flexbox;

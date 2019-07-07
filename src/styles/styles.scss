@@ -3,7 +3,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: $font-armenian, $font-english;
+  font-family: $font-armenian, sans-serif;
 }
 
 //Typography
@@ -21,50 +21,32 @@ p {
   line-height: $line-height * 0.75;
   letter-spacing: 3px;
   margin: 0;
-  font-weight: 100;
-  text-align: center;
+  font-weight: 400;
 
   @media (min-width: $screen-tablet) {
     font-size: $font-size;
     line-height: $line-height;
-    text-align: left;
   }
 }
+
+//Headings
 h1 {
-  font-size: $h1-size * 0.75;
-  margin: 0;
-  @media (min-width: $screen-tablet) {
-    font-size: $h1-size;
-  }
+  @include headingMixin($h1-size);
 }
 h2 {
-  font-size: $h2-size * 0.75;
-  margin: 0;
-  @media (min-width: $screen-tablet) {
-    font-size: $h2-size;
-  }
+  @include headingMixin($h2-size);
 }
 h3 {
-  font-size: $h3-size * 0.75;
-  margin: 0;
-  @media (min-width: $screen-tablet) {
-    font-size: $h3-size;
-  }
+  @include headingMixin($h3-size);
 }
 h4 {
-  font-size: $h4-size * 0.75;
-  margin: 0;
-  @media (min-width: $screen-tablet) {
-    font-size: $h4-size;
-  }
+  @include headingMixin($h4-size);
 }
 h5 {
-  font-size: $h5-size * 0.75;
-  margin: 0;
-  @media (min-width: $screen-tablet) {
-    font-size: $h5-size;
-  }
+  @include headingMixin($h5-size);
 }
+
+//Blockqoute
 blockquote {
   font-family: "Yerevanyan";
   margin: 1.5rem 1rem;
@@ -81,7 +63,7 @@ blockquote {
   }
   p {
     display: inline;
-    font-weight: 400;
+    font-weight: 200;
     font-size: $font-size;
     @media (min-width: $screen-tablet) {
       font-size: $font-size * 1.25;
@@ -116,7 +98,7 @@ ol {
   }
 }
 
-//code tag
+//Code
 code {
   padding: 0.25rem 0.75rem;
   background: $secondary-color;
@@ -124,7 +106,7 @@ code {
   font-family: "Space Mono";
 }
 
-// fixing bug with <AniLink /> trnasition
+// Here we fixing bug with <AniLink /> trnasition
 .tl-wrapper--unmount {
   animation: 1s ease-out 0.2s normal fadeout;
 }
