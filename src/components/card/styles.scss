@@ -1,0 +1,62 @@
+@import "../../styles/vars";
+
+.card__wrapper {
+  min-width: 20rem;
+  max-width: 20rem;
+  height: 15rem;
+  border-radius: 2rem;
+  margin-bottom: $header-height;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+  @include flexbox;
+  align-items: stretch;
+  flex-direction: column;
+
+  @media (min-width: $screen-mobile) {
+    min-width: 30rem;
+    max-width: 30rem;
+    height: 23rem;
+  }
+
+  @media (min-width: $screen-hd) {
+    &:hover {
+      box-shadow: 0 0 20px 10px $dark-color;
+    }
+  }
+}
+.card__image {
+  width: 100%;
+  height: 11rem;
+  overflow: hidden;
+  @media (min-width: $screen-mobile) {
+    height: 16rem;
+  }
+}
+.card__info {
+  max-width: 20rem;
+  min-width: 20rem;
+  height: 4rem;
+  background: $dark-color;
+  color: $light-color;
+  padding: 1rem;
+  box-sizing: border-box;
+  h3,
+  h4 {
+    @include cut-text;
+    margin-bottom: 0.5rem;
+  }
+  h4 {
+    display: none;
+    color: $secondary-color;
+  }
+  @media (min-width: $screen-mobile) {
+    height: 7rem;
+    max-width: 30rem;
+    min-width: 30rem;
+    padding: 2rem 1rem 1rem;
+    h4 {
+      display: block;
+    }
+  }
+}

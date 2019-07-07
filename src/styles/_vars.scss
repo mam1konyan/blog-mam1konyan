@@ -1,0 +1,128 @@
+@import "./fonts";
+
+//heights
+$footer-height: 4rem;
+$header-height: 5rem;
+
+//mediaqueries
+$screen-mobile: 480px;
+$screen-tablet: 767px;
+$screen-desktop: 991px;
+$screen-hd: 1279px;
+$screen-fullhd: 1919px;
+
+//fonts
+$font-english: "Righteous", sans-serif;
+$font-armenian: "Bokonique";
+
+//colors
+$light-color: #ecf0f1;
+$dark-color: #000b1e;
+$active-color: #ea00d9;
+$secondary-color: #0abdc6;
+
+$color-headerBg: $dark-color;
+$color-headerTxt: $light-color;
+$color-homeTxt: $light-color;
+$color-background: #091833;
+$color-aboutTxt: $light-color;
+$color-footerBg: $dark-color;
+
+//typography
+$font-size: 1.2em;
+$line-height: $font-size * 3;
+$h1-size: $font-size * 2;
+$h2-size: $font-size * 1.5;
+$h3-size: $font-size;
+$h4-size: $font-size * 0.75;
+$h5-size: $font-size * 0.5;
+
+//Keyframes
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+@include keyframes(changeBg) {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+//mixins
+@mixin container--max {
+  width: 100%;
+  max-width: 1170px;
+  padding: 0 25px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+@mixin flexbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin title {
+  display: inline-block;
+  background-image: linear-gradient(
+    270deg,
+    rgb(103, 178, 111),
+    rgb(76, 162, 205)
+  );
+  background-size: cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: $h1-size * 0.75;
+  font-weight: 700;
+  margin-bottom: 15px;
+  background-size: 200% 200%;
+  @include animation("changeBg 5s ease infinite");
+
+  @media (min-width: $screen-tablet) {
+    font-size: $h1-size;
+    margin-bottom: 30px;
+  }
+}
+@mixin border-gradient($from, $to, $weight: 0) {
+  $mix-main: mix($from, $to);
+  $mix-sub-from: mix($mix-main, $from);
+  $mix-sub-to: mix($mix-main, $to);
+  box-shadow: 0 2px 0 $weight rgba($mix-sub-to, 0.25),
+    0 -2px 0 $weight rgba($mix-sub-from, 0.25),
+    2px 0 0 $weight rgba($mix-sub-to, 0.25),
+    -2px 0 0 $weight rgba($mix-sub-from, 0.25),
+    2px -2px 0 $weight rgba($mix-main, 0.5),
+    -2px 2px 0 $weight rgba($mix-main, 0.5), 2px 2px 0 $weight rgba($to, 0.75),
+    -2px -2px 0 $weight rgba($from, 0.75);
+}
+@mixin cut-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

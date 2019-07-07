@@ -1,0 +1,26 @@
+@import "../../styles/vars";
+
+$background: $dark-color;
+
+.footer__wrapper {
+  height: $footer-height;
+  background: $background;
+  display: flex;
+  align-items: center;
+  color: $light-color;
+  font-family: $font-english;
+  a {
+    color: $light-color;
+  }
+}
+.footer__body {
+  @include container--max;
+}
+.footer__code {
+  color: $secondary-color;
+  margin: 0 10px 0 0;
+}
+.footer__heart {
+  color: $active-color;
+  margin: 0 10px;
+}

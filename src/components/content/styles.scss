@@ -1,0 +1,16 @@
+@import "../../styles/vars";
+
+.content__wrapper {
+  background: $color-background;
+  width: 100%;
+}
+.content__body {
+  @include container--max;
+  @include flexbox;
+  padding-top: $header-height;
+  flex-wrap: wrap;
+
+  @media (min-width: $screen-desktop) {
+    justify-content: space-between;
+  }
+}

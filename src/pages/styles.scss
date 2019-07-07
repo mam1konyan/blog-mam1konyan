@@ -1,0 +1,31 @@
+@import "../styles/vars";
+
+.home__wrapper {
+  @include flexbox;
+  flex-direction: column;
+}
+.home__body {
+  @include flexbox;
+  @include container--max;
+  justify-content: flex-start;
+  padding-top: $header-height;
+}
+.home__image-wrapper {
+  @include flexbox;
+  width: 100%;
+  background-image: radial-gradient(
+      ellipse closest-side,
+      rgba(15, 14, 22, 0.5),
+      #100e17
+    ),
+    url("../images/home.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: $light-color;
+  align-items: stretch;
+}
+.home__content {
+  @include flexbox;
+  width: 100%;
+}

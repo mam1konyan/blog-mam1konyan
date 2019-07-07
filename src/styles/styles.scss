@@ -1,0 +1,146 @@
+@import "./vars";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-armenian, $font-english;
+}
+
+//Typography
+a {
+  color: $active-color;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in;
+  text-decoration: none;
+  &:hover {
+    color: $active-color;
+  }
+}
+p {
+  font-size: $font-size * 0.75;
+  line-height: $line-height * 0.75;
+  letter-spacing: 3px;
+  margin: 0;
+  font-weight: 100;
+  text-align: center;
+
+  @media (min-width: $screen-tablet) {
+    font-size: $font-size;
+    line-height: $line-height;
+    text-align: left;
+  }
+}
+h1 {
+  font-size: $h1-size * 0.75;
+  margin: 0;
+  @media (min-width: $screen-tablet) {
+    font-size: $h1-size;
+  }
+}
+h2 {
+  font-size: $h2-size * 0.75;
+  margin: 0;
+  @media (min-width: $screen-tablet) {
+    font-size: $h2-size;
+  }
+}
+h3 {
+  font-size: $h3-size * 0.75;
+  margin: 0;
+  @media (min-width: $screen-tablet) {
+    font-size: $h3-size;
+  }
+}
+h4 {
+  font-size: $h4-size * 0.75;
+  margin: 0;
+  @media (min-width: $screen-tablet) {
+    font-size: $h4-size;
+  }
+}
+h5 {
+  font-size: $h5-size * 0.75;
+  margin: 0;
+  @media (min-width: $screen-tablet) {
+    font-size: $h5-size;
+  }
+}
+blockquote {
+  font-family: "Yerevanyan";
+  margin: 1.5rem 1rem;
+  padding: 0.5rem 1rem;
+  quotes: "\201C""\201D""\2018""\2019";
+  color: $secondary-color;
+  &:before {
+    color: $active-color;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+  p {
+    display: inline;
+    font-weight: 400;
+    font-size: $font-size;
+    @media (min-width: $screen-tablet) {
+      font-size: $font-size * 1.25;
+    }
+  }
+}
+
+//Lists
+ol {
+  list-style: none;
+  counter-reset: my-awesome-counter;
+  li {
+    counter-increment: my-awesome-counter;
+    display: flex;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    &:before {
+      content: "0" counter(my-awesome-counter);
+      font-weight: bold;
+      font-size: 3rem;
+      margin-right: 0.5rem;
+      line-height: 1;
+      color: $active-color;
+    }
+  }
+  @media (min-width: $screen-tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      width: 50%;
+    }
+  }
+}
+
+//code tag
+code {
+  padding: 0.25rem 0.75rem;
+  background: $secondary-color;
+  border-radius: 5px;
+  font-family: "Space Mono";
+}
+
+// fixing bug with <AniLink /> trnasition
+.tl-wrapper--unmount {
+  animation: 1s ease-out 0.2s normal fadeout;
+}
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  49% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    z-index: 0;
+  }
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}

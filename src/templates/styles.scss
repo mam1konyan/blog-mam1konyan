@@ -1,0 +1,42 @@
+@import "../styles/vars";
+
+.template__wrapper {
+  min-height: calc(100vh - #{$header-height + $footer-height});
+  padding: $header-height 0;
+  background: $color-background;
+}
+.template__body {
+  @include container--max;
+}
+.template__title {
+  color: $secondary-color;
+  margin: 3rem 0 1rem;
+}
+.template__subtitle {
+  margin-bottom: 3rem;
+  color: $light-color;
+}
+.template__image-wrapper {
+  @include flexbox;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  max-height: 50vh;
+  .gatsby-image-wrapper {
+    width: 100%;
+  }
+}
+.template__text-wrapper {
+  color: $light-color;
+  margin-top: 3rem;
+}
+.template__article-image {
+  display: block;
+  max-width: 80%;
+  height: auto;
+  border-radius: 30px;
+  margin: 1rem auto;
+  //   @media(min-width: $screen-tablet) {
+  //       max-width: 60%;
+  //   }
+}

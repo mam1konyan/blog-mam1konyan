@@ -1,0 +1,50 @@
+@import "../../styles/vars";
+
+.header__wrapper {
+  @include flexbox;
+  background-color: $dark-color;
+  color: $light-color;
+  position: fixed;
+  z-index: 999;
+  width: 100vw;
+  font-family: $font-english;
+  border-bottom: 1px solid $active-color;
+}
+.header__body {
+  @include container--max;
+  @include flexbox;
+  justify-content: space-between;
+  height: $header-height;
+  opacity: 100;
+}
+.header__logo {
+  @include flexbox;
+  flex-direction: row;
+  color: $light-color;
+  font-size: 2rem;
+  cursor: pointer;
+  svg {
+    fill: $light-color;
+  }
+  &:hover {
+    svg {
+      fill: $active-color;
+    }
+  }
+  @at-root &-item {
+    margin-right: 1rem;
+  }
+  @at-root &-text {
+    margin-left: 1rem;
+  }
+}
+.header__social-icons {
+  @include flexbox;
+  justify-content: space-between;
+  font-size: 2rem;
+  width: 6rem;
+  a {
+    @include flexbox;
+    color: $light-color;
+  }
+}

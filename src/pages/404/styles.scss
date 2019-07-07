@@ -1,0 +1,35 @@
+@import "../../styles/vars";
+
+.error__wrapper {
+  @include flexbox;
+  height: calc(100vh - #{$footer-height + $header-height});
+  background-image: radial-gradient(
+      ellipse closest-side,
+      rgba(15, 14, 22, 0.5),
+      #100e17
+    ),
+    url("../../images/error.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: $header-height;
+}
+.error__body {
+  @include container--max;
+  @include flexbox;
+  flex-direction: column;
+
+  a {
+    @include flexbox;
+  }
+}
+.error__text {
+  font-size: 2rem;
+  color: $light-color;
+  text-align: center;
+}
+.error__button {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 3rem;
+  text-decoration: underline;
+}
